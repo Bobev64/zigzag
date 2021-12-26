@@ -20,7 +20,7 @@ int main(void) {
 
     while(1 == 1){
         
-        srand(time(0));
+        srand(time(0)); // Seeds rand with time passed each time loop is completed for new color
 
         // Draws diagonal going 'up' to the specified upperBound
         while(higherThanTen == 0) {
@@ -28,7 +28,7 @@ int main(void) {
                 for(int i=0; i<spaceAmount; i++){
                     printf(" ");
                 }
-                int randColor = rand() % numOfColors;
+                int randColor = rand() % numOfColors; // Allows us to set a range for output of rand
                 printf("%s3\n", colors[randColor]);
                 currentSize++;
                 spaceAmount++;
@@ -42,13 +42,15 @@ int main(void) {
                 for(int i = 0; i<spaceAmount; i++){
                     printf(" ");
                 }
-                printf("3\n");
+                int randColor = rand() % numOfColors;
+                printf("%s3\n", colors[randColor]);
                 spaceAmount--;
                 currentSize--; 
             } else {
                 higherThanTen = 0;
             }
         }
+        printf("\033[0m");
     }
     return 0;
 }
