@@ -2,8 +2,17 @@
 #include<stdlib.h>
 #include<time.h>
 
-int main(void) {
-    int upperBound = 10; // Change this to change size of zigzag
+// I could've made this into a function but decided against it
+
+extern int upperBound = 0;
+
+int main(int argc, char* argv[]) {
+    if (argv[1] == NULL) {
+        upperBound = 10; // Defaults to 10 if no arg given
+    } else {
+        upperBound = atoi(argv[1]); // Takes arg for size of zigzag
+    }
+    
     int lowerBound = 1;
     int higherThanTen, currentSize, spaceAmount = 0;
 
@@ -50,7 +59,7 @@ int main(void) {
                 higherThanTen = 0;
             }
         }
-        printf("\033[0m");
+        printf("\033[0m"); // Returns terminal color to normal
     }
     return 0;
 }
