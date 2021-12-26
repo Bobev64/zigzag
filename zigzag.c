@@ -2,8 +2,6 @@
 #include<stdlib.h>
 #include<time.h>
 
-// I could've made this into a function but decided against it
-
 extern int upperBound = 0;
 
 int main(int argc, char* argv[]) {
