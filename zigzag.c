@@ -4,6 +4,7 @@
 
 extern int upperBound = 0;
 
+
 int main(int argc, char* argv[]) {
     if (argv[1] == NULL) {
         upperBound = 10; // Defaults to 10 if no arg given
@@ -25,6 +26,8 @@ int main(int argc, char* argv[]) {
         "\e[0;36m"
     };
 
+    int randColor = 0;
+
     while(1 == 1){
         
         srand(time(0)); // Seeds rand with time passed each time loop is completed for new color
@@ -35,7 +38,7 @@ int main(int argc, char* argv[]) {
                 for(int i=0; i<spaceAmount; i++){
                     printf(" ");
                 }
-                int randColor = rand() % numOfColors; // Allows us to set a range for output of rand
+                randColor = rand() % numOfColors; // Allows us to set a range for output of rand
                 printf("%s3\n", colors[randColor]);
                 currentSize++;
                 spaceAmount++;
@@ -49,7 +52,7 @@ int main(int argc, char* argv[]) {
                 for(int i = 0; i<spaceAmount; i++){
                     printf(" ");
                 }
-                int randColor = rand() % numOfColors;
+                randColor = rand() % numOfColors;
                 printf("%s3\n", colors[randColor]);
                 spaceAmount--;
                 currentSize--; 
